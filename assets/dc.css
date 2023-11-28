@@ -16,6 +16,3 @@ IMG {max-width:99%;}
 
 ul li {position:relative;left:-15px;}
 ul ul {position:relative;left:-30px;}
-li::marker {content:url('https://digitalcheese.xyz/Media/li-1.png');}
-ul ul li::marker {content:url(https://digitalcheese.xyz/Media/li-2.png);}
-ul ul ul li::marker {content:url(https://digitalcheese.xyz/Media/li-3.png);}
