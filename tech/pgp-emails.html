@@ -3,11 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta property="og:site_name" content="Digital Cheese's Articles">
-        <meta property="og:title" content="Encrypt Your Emails Via PGP-Keys!">
+        <meta property="og:title" content="Encrypt Your Emails Via PGP-Keys">
         <meta property="og:description" content="Encrypting your emails via PGP keys is a rather simple job. By using PGP-encryption for your emails, you can encrypt messages you would like to send to friends, random people online, and more. You will find this guide useful if you are confused on how to do it!">
         <meta property="og:image" content="https://articles.digitalcheese.xyz/assets/dc.jpg">
         <meta property="og:image:alt" content="Digital Cheese Profile Picture">
-        <meta property="og:url" content="https://articles.digitalcheese.xyz/index.html">
+        <meta property="og:url" content="https://articles.digitalcheese.xyz/tech/pgp-emails.html">
         <meta property="og:card" content="summary">
         <meta name="viewport" content="width=device-width">
         <meta name="author" content="Digital Cheese">
@@ -16,7 +16,7 @@
         <link rel="shortcut icon" href="/assets/dc.ico">
         <link rel="stylesheet" href="/assets/dc.css">
         <script src="/assets/dc.js"></script>
-        <title>Encrypt Your Emails Via PGP-Keys!</title>
+        <title>Encrypt Your Emails Via PGP-Keys</title>
         <!-- Other Metadata -->
         <meta property="twitter:creator" content="@DigitalCheeseYT">
         <meta property="twitter:site" content="@DigitalCheeseYT">
@@ -38,7 +38,7 @@
                 <div class="usrnme"><a href=/index.html>Digital Cheese</a></div>
                 <div class="quick-menu"><a onclick="LinkMenu()"><img src="/assets/menu.png" alt="Links" title="Click For The Link Navigation" class="LINK-ICO"></a></div>
             </div>
-            <div class="content"><h1>Encrypt Your Emails Via PGP-Keys</h1>
+            <div class="content"><h1 id="title">Encrypt Your Emails Via PGP-Keys</h1>
                 Encrypting your emails via PGP keys is a rather simple job. By using PGP-encryption for your emails, you can encrypt messages you would like to send to friends, random people online, and more. You will find this guide useful if you are confused on how to do it! Below is a table of contents for this guide.
                 <br><br>
                 <ul>
@@ -63,10 +63,52 @@
                 <br><br>
                 Despite these reasons, there are many good things about PGP-encryption! No one, not even the email-host such as Microsoft or Google, can see your emails as long as you don't give the private key to anyone else. Also, messages sent that are encrypted with your private key are signed and encrypted so you know damn well no one changed your message while sending it. Due to keys having different signatures, you can also determine if someone is hacked or not in some cases (such as when communicating with people wanted by elites).
                 <h2 id="create">How To Create PGP Keys</h2>
-                
+                You have a variety of options when creating PGP-keys. The options I recommend I will show you how to do below, feel free to mess around with the key settings to get it however you like though.
+                <br><br>
+                1. Go To "Settings" > "Account Settings"<br>
+                2. Click "End-To-End Encryption" On An Email Account<br>
+                3. Click "Add Key" Then "Create A New OpenPGP Key"<br>
+                4. Set The Key To Not Expire And Select What Email You Want To Use<br>
+                5. Set Key Type To RSA And Key Size To 4096<br>
+                6. Click "Generate Key" Then "Confirm"<br>
+                7. Set Your Default Key To The New Key
                 <h2 id="share">How To Share Public Keys</h2>
+                There are two ways (at least on Thunderbird) to share your public key. Technically a 3rd way exists, but I have yet to find a way to import pure PGP-blocks.
+                <br><br>
+                1. Email Your Public Key<br>
+                When you write an email, you can attach your public key. If you have the public key of your friend(s), you can just email them and it'll be encrypted as well. They will be able to add your public key to their collection then reply to your email in an encrypted fashion. The reason this one is specified as a "different way" is because Thunderbird includes a way to directly attach it without much effort on your part.
+                <br><br>
+                To do that, start composing an email. From there, click "File" > "Attach" > and finally "My OpenPGP Public Key"
+                <br><br>
+                2. Share Your Public Key Online<br>
+                You can export your public key as a file and then attach it wherever you want. You can put it on your website, a Discord or Telegram chat, basically anywhere that allows you to send any file without issues. To do this, go to your account settings on Thunderbird. After that, go to "End-To-End Encryption" on whatever account has the public key you want to export. Then click "OpenPGP Key Manager", afterwards left-click on the key you want to export then go to "File" > "Export Public Key(s) To File". Save the key, give it whatever name you want, then upload it wherever you would like to do so.
                 <h2 id="encrypt">How To Encrypt Your Message With PGP</h2>
+                You are unable to encrypt messages already sent without being PGP-encrypted unforunately, however it is very easy to encrypt any future messages you decide to send out.
+                <br><br>
+                First off, you will need your friend(s) public key(s) before you send this email. I assume you have already read <a href="#share">the previous section</a> and have done that, if not then follow that part of the guide real quick.
+                <br><br>
+                After that is done, start composing a message. Type in who you wanna send it to, subject, and body text. Before you send it however, make sure you have enabled encryption. If you want, you may attach your public key so they can respond to it and encrypt their message without having previously obtained your key else-where. This is fine because as stated earlier, the public key is purely to encrypt messages sent while the private key is to decrypt the encrypted messages.
+                <br><br>
+                Once you have finished writing your message, send it like normal! That is all you have to do to send a PGP-encrypted email. You may share to multiple people encrypted as well as normal as long as you have their public keys. If you would like to see more features of PGP-email encryption, I would recommend seeing below (however, you may not use most, if not all, of these features).
                 <h2 id="extras">Extra PGP-Key Features</h2>
+                1. Setting Expiration Dates On PGP-Keys<br>
+                You can set PGP-keys to expire after a certain amount of time as to prevent people who manage to get the key from using it after a certain date. You can also extend the time-limit of the PGP-key if necessary.
+                <br><br>
+                2. RSA or ECC<br>
+                You can either have 3072 RSA, 4096 RSA (which is what I recommend), or ECC PGP-keys. 3072 RSA is less secure than 4096, so I would not recommend it. As for 4096 RSA or ECC, I am unsure if they are just as secure as each other or not. However, ECC creates a far shorter PGP-block than 4096 RSA.
+                <br><br>
+                3. Generate More Keys<br>
+                One account can have as many keys as you want, I would recommend this if you are real paranoid about your messages, but also don't want to make multiple email accounts and want to make it harder to decrypt everything even if someone got one of your PGP-keys.
+                <br><br>
+                4. Encrypted Drafts<br>
+                You can encrypt your drafted messages via PGP encryption, at least on Thunderbird. By doing this, drafted messages you are writing will be unreadable without your private key as well. You can also encrypt the subjects of your messages if you're wanting even more encryption on your messages.
+                <hr>
+                Thanks for reading this tech tutorial! If you have any questions or criticism, please email me below and I will respond. I would give a PGP-key here as it would be fitting, but I unforunately don't have access to my main laptop to get my main PGP-key right now :(
+                <br><br>
+                <a href="mailto:dc@tfwno.gf">dc@tfwno.gf</a> | <a href="mailto:digitalcheese@att.net">digitalcheese@att.net</a>
+                <br><br>
+                Created November 28th, 2023 at 9:43PM<br>
+                Last Updated Novermber 28th, 2023 at 9:43PM
             </div>
             <div class="footer">2021-2023 <a href="https://digitalcheese.xyz/">Digital Cheese</a>, all rights reserved. If you would like to use any content on this website, please link to the original source assuming it still exists. If it was removed, please link to just the website homepage. Thank you for visiting this webpage!
             </div>
