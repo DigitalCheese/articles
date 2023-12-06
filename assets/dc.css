@@ -14,7 +14,7 @@ h1 {background-color:rgb(20,20,20);text-align:center;}
 a {color:white;}
 IMG {max-width:99%;}
 
-h2[id]:target {color:gold;text-decoration:underline;text-underline-offset:4px;}
+h2[id]:target, h4[id]:target {color:gold;text-decoration:underline;text-underline-offset:4px;}
 
 ul li {position:relative;left:-15px;}
 ul ul {position:relative;left:-30px;}
